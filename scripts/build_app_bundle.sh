@@ -3,6 +3,8 @@ set -euo pipefail
 
 APP_NAME="Spotlite"
 BUNDLE_ID="dev.maartengoet.spotlite"
+APP_VERSION="${SPOTLITE_VERSION:-0.1.0}"
+BUNDLE_VERSION="${SPOTLITE_BUILD_NUMBER:-1}"
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 BUILD_DIR="$ROOT_DIR/build"
 APP_DIR="$BUILD_DIR/$APP_NAME.app"
@@ -49,9 +51,9 @@ cat > "$CONTENTS_DIR/Info.plist" <<PLIST
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleShortVersionString</key>
-    <string>0.1.0</string>
+    <string>$APP_VERSION</string>
     <key>CFBundleVersion</key>
-    <string>1</string>
+    <string>$BUNDLE_VERSION</string>
     <key>LSMinimumSystemVersion</key>
     <string>14.0</string>
     <key>LSUIElement</key>
